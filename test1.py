@@ -17,7 +17,31 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 
 
 
+rect = pygame.Rect(0, 0, 100, 100)
+
+
 screen.fill((255,255,255))
+pygame.draw.rect(screen,(0,0,0),rect)
+pygame.draw.rect(screen,(5,150,5),rect)
+
+
+
+for p in range(8):
+	if p%2 == 0:
+		colors = [(0,0,0),(255,255,255)]
+	else:
+		colors = [(255,255,255),(0,0,0)]
+	for i in range(8):
+		color = (0,0,0)
+		if i%2 == 0:
+			color = colors[0]
+		else:
+			color = colors[1]
+		print(color)
+		rect = pygame.Rect(100*i,100*p,100,100)
+		pygame.draw.rect(screen,color,rect)
+
+
 pygame.display.flip()
 
 # game loop
