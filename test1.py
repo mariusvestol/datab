@@ -18,13 +18,13 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 
 
 rect = pygame.Rect(0, 0, 100, 100)
-
+myRects = []
 
 screen.fill((255,255,255))
 pygame.draw.rect(screen,(0,0,0),rect)
 pygame.draw.rect(screen,(5,150,5),rect)
 
-
+# on doit creer des nouveaux rectangles parce que ils ne sont pas accesible quand ils sont cree dans un liste je crois
 
 for p in range(8):
 	if p%2 == 0:
@@ -39,10 +39,19 @@ for p in range(8):
 			color = colors[1]
 		print(color)
 		rect = pygame.Rect(100*i,100*p,100,100)
+		myRects.append(rect)
 		pygame.draw.rect(screen,color,rect)
 
 
 pygame.display.flip()
+
+
+"""
+print(myRects)
+
+myRects[1].topleft(200,200)
+"""
+
 
 # game loop
 
